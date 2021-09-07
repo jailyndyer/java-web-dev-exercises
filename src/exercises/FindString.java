@@ -3,7 +3,7 @@ package exercises;
 import java.util.Scanner;
 
 public class FindString {
-    public static void main(String[] args) {
+    public static String main(String[] args) {
         Scanner input = new Scanner(System.in);
 
         String sentence = "Enter a word from this sentence below";
@@ -16,5 +16,6 @@ public class FindString {
         System.out.println("The word you entered is at the index of " + index + ".");
         String newSentence = sentence.replace(word+" ", "");
         System.out.println(newSentence + ".");
+        return "";
     }
 }
