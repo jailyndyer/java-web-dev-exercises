@@ -16,4 +16,31 @@ public class Menu {
         menuItems.add(menuItem);
         lastUpdated = new Date();
     }
+
+    public void removeMenuItem(MenuItem removeItem) {
+        this.menuItems.remove(removeItem);
+    }
+
+    public Date getLastUpdated() {
+        return lastUpdated;
+    }
+
+    public void printMenu(ArrayList<MenuItem> items) {
+        for (MenuItem anItem : items) {
+            System.out.println(anItem.toString());
+        }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Menu menu = (Menu) o;
+        return Objects.equals(menuItem, menu.menuItem) && Objects.equals(menuItems, menu.menuItems) && Objects.equals(lastUpdated, menu.lastUpdated);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(menuItem, menuItems, lastUpdated);
+    }
 }
